@@ -1,0 +1,12 @@
+<ion-view view-title="已使用">
+    <ion-content style="top:48px">
+        <ion-list>
+            <ion-item class="item-image padding item-borderless">
+                <img src="../img/discountusing02.png">
+            </ion-item>
+             <ion-item class="item-image padding item-borderless">
+                <img src="../img/discountusing02.png">
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

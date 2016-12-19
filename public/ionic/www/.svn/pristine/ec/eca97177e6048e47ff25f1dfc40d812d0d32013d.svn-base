@@ -1,0 +1,127 @@
+<ion-view view-title="订单详情页">
+    <ion-content>
+        <ion-list>
+            <ion-item>
+                <div class="row">
+                    <div class="col text-center">提交订单</div>
+                    <div class="col text-center">取货中</div>
+                    <div class="col text-center">取货完成</div>
+                </div>
+                <div class="row">
+                    <div class="col text-center" style="position:relative;">
+                        <span style="display:inline-block;width:20px;height:20px;border-radius:50%;background-color:#ff7300"></span>
+                        <span style="display:inline-block;position:absolute;    width: inherit;height:5px;background-color:#ff7300;top:13px;"></span>
+                    </div>
+                    <div class="col text-center" style="position:relative;">
+                        <span style="display:inline-block;width:21px;height:20px;border-radius:50%;background-color:#eee"></span>
+                        <span style="display:inline-block;position:absolute;    width: inherit;height:5px;background-color:#eee;top:13px;"></span>
+                    </div>
+                    <div class="col text-center" style="position:relative;">
+                        <span style="display:inline-block;width:20px;height:20px;border-radius:50%;background-color:#eee"></span>
+                    </div>
+                    
+                    
+                    
+                </div>
+            </ion-item>
+            <ion-item>
+                <p>订单状态：<i class="current-price">待取货</i></p>
+                <p>订单编号：<i>19705124550</i></p>
+                <p>下单时间：<i>2016-06-20 12:43:25</i></p>
+                <a href="##" class="button button-full light" style="background-color:#ff7300">继续逛逛</a>
+            </ion-item>
+            <a href="##">
+            <ion-item class="item-image padding">
+                <img src="../img/orderdetail01.png" alt="">
+            </ion-item>
+            </a>
+            <ion-item>
+                <p>供货商家：<i>广州联帆科技有限公司</i></p>
+                <p>商品金额：<i class="current-price">¥48.00</i><i>(在线支付)</i></p>
+                <p style="white-space: normal;">取货地址：<i>广州市高新技术产业开发区科学城开源大道11号智能卖客加速器店NO.32121920售货机</i></p>
+                <p>收货人：<i>李青</i></p>
+            </ion-item>
+            <div style="height:20px;background-color:#eee"></div>
+            <ion-item class="item-icon-right">
+                <h3>订单清单</h3>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+            <ion-item class="item-avatar-left">
+                <img src="../img/orders01.png" alt="">
+                <div class="row">
+                    <div class="col">
+                        <h3>栗子馅饼</h3>
+                        <p>编号：1022300012</p>
+                    </div>
+                    <div class="col text-right">
+                        <div class="current-price">¥<i class="ng-binding">18</i>元</div>
+                        <p>X<i>2</i></p>
+                    </div>
+                </div>
+            </ion-item>
+            <ion-item class="item-avatar-left">
+                <img src="../img/orders01.png" alt="">
+                <div class="row">
+                    <div class="col">
+                        <h3>栗子馅饼</h3>
+                        <p>编号：1022300012</p>
+                    </div>
+                    <div class="col text-right">
+                        <div class="current-price">¥<i class="ng-binding">18</i>元</div>
+                        <p>X<i>2</i></p>
+                    </div>
+                </div>
+            </ion-item>
+            <ion-item class="item-avatar-left">
+                <img src="../img/orders01.png" alt="">
+                <div class="row">
+                    <div class="col">
+                        <h3>栗子馅饼</h3>
+                        <p>编号：1022300012</p>
+                    </div>
+                    <div class="col text-right">
+                        <div class="current-price">¥<i class="ng-binding">18</i>元</div>
+                        <p>X<i>2</i></p>
+                    </div>
+                </div>
+            </ion-item>
+            <div style="height:20px;background-color:#eee"></div>
+            <ion-item>
+                <div class="row">
+                    <div class="col text-left">商品总额：</div>
+                    <div class="col text-right"><i class="current-price">¥ 38.00</i></div>
+                </div>
+                <div class="row">
+                    <div class="col text-left">返现：</div>
+                    <div class="col text-right"><i class="current-price">¥ 0.00</i></div>
+                </div>
+                <div class="row">
+                    <div class="col text-left">运费：</div>
+                    <div class="col text-right"><i class="current-price">¥ 10.00</i></div>
+                </div>
+            </ion-item>
+            <ion-item class="text-right">
+                实付金额：<i class="current-price">¥ 48.00</i>
+            </ion-item>
+            <div style="height:20px;background-color:#eee"></div>
+            <ion-item>
+                <h3 style="padding-left: 7px;border-left: 3px solid #ff7300;">您可能感兴趣的</h3>
+                <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
+                  <ion-slide ng-repeat="item in recommend">
+                        <div style="width:33%;display:inline-block;padding:10px;" ng-repeat="goods in item.items">
+                            <a href="#/tab/food/{{goods.id}}"><img ng-src="{{goods.imgurl}}" alt="" style="width:100%;height:auto;border:1px solid #eee"></a>
+                            <div>
+                                <div>{{goods.method}}</div>
+                                <div>已售<i class="number-case">{{goods.salesNumber}}</i>件</div>
+                            </div>
+                            <div>
+                                <span class="current-price">¥<i>{{goods.currentPrice}}</i>元</span>
+                                <span><del class="old original-price">¥<span>{{goods.originalPrice}}</span></del></span>
+                            </div>
+                        </div>
+                  </ion-slide>
+                </ion-slide-box>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

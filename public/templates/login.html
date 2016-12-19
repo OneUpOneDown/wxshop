@@ -1,0 +1,35 @@
+
+	<div class="content">
+		<div class="panel panel-success">
+			<div class="panel-heading">
+				<h3 class="panel-title text-center">用户注册</h3>
+			</div>
+
+			<!-- <input type="button" value="获取菜单" ng-click="getData()">
+			<br>
+			<ul>
+				<li ng-repeat="item in items" ng-bind="item.name"></li>
+			</ul> -->
+
+			<div class="panel-body">
+				<form action="" class="bs-example bs-example-form">
+					<div class="form-group">
+						<label for="name">用户名：</label>
+						<input type="text" placeholder="用户名" id="name" class="form-control" ng-model="newUser.loginCode">
+					</div>
+					<div class="form-group">
+						<label for="password">密码：</label>
+						<input type="password" placeholder="密码啊" id="password" class="form-control" ng-model="newUser.passWord">
+					</div>
+					<div class="form-group">
+						<h5 class="success-msg" ng-if="msgSucc" ng-bind="success"></h5>
+						<h5 class="err-msg" ng-if="msgErr" ng-bind="err"></h5>
+					</div>
+				</form>
+			</div>
+			<div class="footer">
+				<input type="button" value="提交" class="btn btn-danger" ng-click="subNewUser()">
+			</div>
+
+		</div>
+	</div>

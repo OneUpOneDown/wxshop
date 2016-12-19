@@ -1,0 +1,29 @@
+angular.module('starter.services', [])
+.factory('goodsServices', function($http) {
+// Might use a resource here that returns a JSON array
+
+// Some fake testing data
+var goodsRequest = function(){
+    return $http.get('./data/recommend.json')
+}
+
+return {
+   events: function(){
+        return goodsRequest();
+   }
+};
+})
+.factory('machine',function($http,$q){
+    var machinelist=function(name,lon,lat){
+        console.log("machineService")
+        var deferred = $q.defer();
+        var url = "http://127.0.0.1:8080/ly-Store/ly/store/vending/findName.action?baseCondition.name=name&baseCondition.lon=115.478284&baseCondition.lat=24.119538;"
+        url+="&callback=JSON_CALLBACK";
+        return  $http.jsonp(url);
+    }
+    return {
+        machinelistall: function(){
+            return machinelist();
+        }
+    }
+})

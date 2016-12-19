@@ -1,0 +1,5 @@
+<ion-view view-title="已取消">
+    <ion-content style="top: 48px;">
+        已取消
+    </ion-content>
+</ion-view>

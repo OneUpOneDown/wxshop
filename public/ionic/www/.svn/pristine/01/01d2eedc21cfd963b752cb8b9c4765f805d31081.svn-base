@@ -1,0 +1,28 @@
+<ion-view view-title="绑定手机号码" hide-tabs="true">
+    <ion-content>
+        <ion-list>
+            <ion-item class="item-divider">
+                <p>绑定手机号码可以提高账号的安全等级</p>
+            </ion-item>
+            <ion-item class="item-input item-button-right">
+
+                <input type="text" placeholder="手机号码">
+                 <a style="color: #ff7300; border: 1px solid #ff7300; background: #fff; border-radius: 5px; margin-right: 20px; padding: 5px; font-size: 12px;">发送验证码</a>
+            </ion-item>
+            <ion-item class="item-input">
+                <input type="text" placeholder="短信验证码">
+            </ion-item>
+            <ion-item class="text-center" style="border-bottom:none;">
+                <button class="button button-energized" style="width:100%;background-color:#ff7300">验证并绑定</button>
+            </ion-item>
+        </ion-list>
+        <ion-list>
+            <ion-item>
+                已绑定：136****1221
+            </ion-item>
+            <ion-item class="item-borderless stable-bg" style="border-bottom:none;" >
+                <a href="##" class="button button-full light" style="background-color:#ff7300">跟换手机号</a>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

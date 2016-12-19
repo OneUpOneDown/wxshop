@@ -1,0 +1,240 @@
+/* Empty. Add your own CSS if you like */
+a{
+    color: #333;
+    text-decoration: none;
+}
+.caoitem{
+    background-color: #000;
+}
+#ly-popover{
+    width: 100%;
+    left: 0!important;
+}
+.ly-img {
+    background-image: url(../img/mybacklg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;  
+    position: absolute;
+}
+.sactive{
+    background-color: #ff7300;
+}
+.sactive:after {
+    content: '';
+    position: absolute;
+    left: 43%;
+    z-index: 9;
+    display: block;
+    border-style: solid;
+    border-color: #ff7300 #fff;
+    border-width: 10px 10px 0 10px;
+}
+.ly-dark{
+    background-color: #000;
+}
+#ly-top .tabs{
+    top:0;
+}
+.ly-paddingless{
+    padding: 0;
+}
+.ly-margin-bottomless{
+    margin-bottom: 0;
+}
+.ly-eee-bg{
+    background-color: #eee;
+}
+.ly-bg{
+    background-color: #ff7300;
+}
+.original-price{
+    color:#7b7b7b;
+}
+.current-price{
+    color:#ff7300!important;
+}
+.number-case{
+    color:#E42112;
+}
+.ly-white{
+    color:#fff;
+}
+.ly-font12{
+    font-size: 12px!important;
+}
+/*弹出框半屏*/
+.modal-backdrop, .modal-backdrop-bg {
+    position: fixed;
+    left: 0;
+    top: initial;
+    bottom: 0!important;
+    z-index: 10;
+    width: 100%;
+    height: 50%;
+}
+/*tab icon颜色*/
+ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-color-active-positive .tab-item.activated {
+    color: #ff7300;
+}
+.tabs .tab-item .badge {
+    background-color: #e42112;
+    color: #f8f8f8;
+}
+.ly-button{
+	border: 0;
+    background: none;
+}
+.ly-bar{
+	border-color: #ff7300;
+    background-color: #ff7300;
+    background-image: none;
+    color: #fff;
+    padding-right: 30px;
+}
+.ly-search{
+	width: 100%;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+.ly-submit-button{
+    display: inline-block;
+    background: #ff7300;
+    color: #fff;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 5px;
+}
+#ly-list-icon{
+	border: 0;
+    background: #ff7300;
+    font-size: 20px!important;
+	z-index: 1;
+    padding: 0 11px;
+    min-width: initial;
+    min-height: 31px;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 32px;
+}
+#ly-search-icon{
+	position: absolute;
+    right: 30px;
+    border: 0;
+    background: #fff;
+    font-size: 20px;
+    border-radius: 5px;
+}
+/*login*/
+.ly-menu{
+    display: block;
+    border: 1px solid #fff;
+    padding: 10px 10px;
+    color: #fff;
+    border-radius: 2px;
+}
+.ly-login-icon{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 4px;
+}
+/*轮播图*/
+.box{
+    width: 100%;
+    height: 160px;
+}
+div > img{
+    width: 100%;
+    height: 100%;
+}
+.slider-pager{
+	text-align: right;
+    padding-right: 20px;
+}
+.slider-pager .slider-pager-page{
+	opacity: 1;
+	color: #fff;
+}
+.slider-pager .slider-pager-page.active{
+	color:#ff7300;
+}
+/*定位*/
+.ly-adress{
+	position: relative;
+	font-size: 14px;
+    text-align: center;
+    background-color: #fdefe4;
+    margin: 0 30px;
+    padding: 2px 0;
+    border-radius: 10px;
+}
+.ly-right-icon{
+	position: absolute;
+    right: 10px;
+    color: #ff7300;
+    font-size: 20px;
+    top: -3px;
+}
+.ly-back-icon,
+.ly-add-icon{
+    color:#fff;
+    font-size: 20px!important;
+}
+.ly-vertical-bar-icon{
+    width: 5px;
+    color: #ff7300;
+}
+/*我的个人中心*/
+.ly-item{
+    display: block;
+    float: left;
+    width: 25%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-top: .12rem;
+    text-align: center;
+}
+.ly-gray-color{
+    color:#848689;
+}
+.ly-button-block{
+    background: #ff7300;
+    color: #fff;
+    padding: 16px;
+}
+.ly-block{
+    border: 1px solid #eee;
+    padding: 11px;
+}
+.ly-active{
+    background-color: #ff7300;
+}
+.ly-active .ly-triangle-down {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid red;
+}
+/*分销图片自适应*/
+.ly-fenxiao-img {
+    background-image: url(../img/fenxiao.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;  
+    position: absolute;
+}
+/*首页自适应*/
+#ly-adaption{
+    padding: 0;
+    min-width: 300px;
+    max-width: 640px;
+    margin: 0 auto;
+}
+/*地图*/
+#allmap{
+    width: 100%;height: 50%;overflow: hidden;margin:0;font-family:"微软雅黑";
+}

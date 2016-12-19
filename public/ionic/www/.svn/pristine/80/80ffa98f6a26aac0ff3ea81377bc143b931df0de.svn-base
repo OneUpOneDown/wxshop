@@ -1,0 +1,47 @@
+<ion-view view-title="百度地图" hide-tabs="true">
+    <ion-header-bar class="ly-bar">
+        <input class="ly-search" type="text" placeholder="搜索商品/售货机">
+        <button id="ly-search-icon" class="ion-ios-search" ng-click="machineSearch()"></button>
+    </ion-header-bar>
+    <ion-content scroll="false">
+        <div id="allmap"></div>
+
+    </ion-content>
+    <ion-content style="top:53%;">
+        <ion-list>
+            <ion-item class="item-divider">
+                搜索的
+            </ion-item>
+            <ion-item class="item-avatar-right">
+                <img src="../img/machine01.png">
+                <h3>1.万科东荟城店</h3>
+                <p>广州科学城开泰大道与荔红二路交界处</p>
+            </ion-item>
+            <ion-item class="item-avatar-right">
+                <img src="../img/machine01.png">
+                <h3>2.万科东荟城店</h3>
+                <p>广州科学城开泰大道与荔红二路交界处</p>
+            </ion-item>
+            <ion-item class="item-avatar-right">
+                <img src="../img/machine01.png">
+                <h3>3.万科东荟城店</h3>
+                <p>广州科学城开泰大道与荔红二路交界处</p>
+            </ion-item>
+            <ion-item class="item-avatar-right">
+                <img src="../img/machine01.png">
+                <h3>1.万科东荟城店</h3>
+                <p>广州科学城开泰大道与荔红二路交界处</p>
+            </ion-item>
+            <ion-item class="item-avatar-right">
+                <img src="../img/machine01.png">
+                <h3>2.万科东荟城店</h3>
+                <p>广州科学城开泰大道与荔红二路交界处</p>
+            </ion-item>
+            <ion-item class="item-avatar-right">
+                <img src="../img/machine01.png">
+                <h3>3.万科东荟城店</h3>
+                <p>广州科学城开泰大道与荔红二路交界处</p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

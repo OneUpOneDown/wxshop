@@ -1,0 +1,18 @@
+<ion-view view-title="分销" hide-tabs="true">
+    <ion-content>
+        <ion-list>
+            <div class="max-zsy">
+                <div class="text-center" style="position:absolute;">
+                    <img src="../img/fenxiao.png" alt="" id="ly-fx-bigimg">
+                </div>
+                <div class="text-center" style="position:relative">
+                    <div class="ly-fx-face"><img src="img/myface.png" ></div>
+                    <div class="ly-fx-name">ljz</div>
+                    <div class="ly-fx-ma">
+                        <img src="../img/ma01.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,19 @@
+<ion-view view-title="提现记录">
+    <ion-tabs class="tabs-top tabs-color-active-positive tabs-striped" id="ly-top">
+        <!-- Dashboard Tab -->
+        <ion-tab icon-off="ion-ios-arrow-left" icon-on="ion-ios-arrow-left" href="#/tab/personal-center">
+        </ion-tab>
+        <ion-tab title="全部"  href="#/tixianrecord/all">
+            <ion-nav-view name="new-all"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="待审核"  href="#/tixianrecord/checking">
+            <ion-nav-view name="new-checking"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="已审核" href="#/tixianrecord/checked">
+            <ion-nav-view name="new-checked"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="已取消" href="#/tixianrecord/cancle">
+            <ion-nav-view name="new-cancle"></ion-nav-view>
+        </ion-tab> 
+    </ion-tabs>
+</ion-view>

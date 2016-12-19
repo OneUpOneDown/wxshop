@@ -1,0 +1,16 @@
+<ion-view view-title="待使用" class="ly-eee-bg">
+    <ion-content style="top:48px">
+        <ion-list>
+            <ion-item class="item-icon-right item-borderless">
+                <h2>使用智能豆兑换智能卖客优惠券</h2>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+            <ion-item class="item-image padding item-borderless ly-eee-bg">
+                <img src="../img/discountusing01.png" alt="">
+            </ion-item>
+            <ion-item class="item-image padding item-borderless ly-eee-bg">
+                <img src="../img/discountusing01.png" alt="">
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

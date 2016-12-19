@@ -1,0 +1,31 @@
+<ion-view class="ly-eee-bg" view-title="提现" hide-tabs="true">
+    <ion-content class="padding">
+        <ion-list>
+            <ion-item class="item-borderless">
+                <div class="row">
+                    <div class="col col-25">微信帐号</div>
+                    <div class="col">13611476695</div>
+                </div>
+            </ion-item>
+            <ion-item class="item-borderless">
+                <div class="row">
+                    <div class="col col-25">提现金额</div>
+                    <div class="col">当前零钱余额<i class="current-price">20.82</i></div>
+                    <div class="col col-25"><span style="border:1px solid #ff7300;color:#ff7300;padding:0 5px">全部提现</span></div>
+                </div>
+            </ion-item>
+            <ion-item class="item-borderless">
+                <div class="row ly-paddingless">
+                    <div class="col"></div>
+                    <div class="col"><input type="text" placeholder="输入提现金额" style="border:1px solid #ddd;background:#eee;"></div>
+                    <div class="col col-center"><a href="##" style="    background: #eee;
+    border: 1px solid #ddd;
+    padding: 5px 10px;">提交</a></div>
+                </div>
+                <div style="margin:15px 0;height:1px;background:#000;"></div>
+                <p>最少提现金额20元</p>
+            </ion-item>
+            
+        </ion-list>
+    </ion-content>
+</ion-view>

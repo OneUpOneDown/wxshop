@@ -1,0 +1,26 @@
+<ion-view view-title="salesdetail" hide-tabs="true">
+    <ion-header-bar align-title="left" class="bar-dark">
+        <div class="buttons">
+            <a class="button" ng-click="doSomething()"  href="#/tab/tab1">
+                <button class="ly-back-icon ly-button ion-android-arrow-back"></button>
+            </a>
+        </div>
+        <h1 class="title">我的地址123</h1>
+        <div class="buttons">
+            <button class="ly-add-icon ly-button ion-android-add"></button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <ion-list>
+            <ion-item class="item-remove-animate item-avatar item-icon-right"
+            type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+                <h2>小明,13312344321</h2>
+                <p>广东省 广州市 开发区 万达影城</p>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+                <ion-option-button class="button-assertive" ng-click="remove(chat)">
+                  删除
+                </ion-option-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

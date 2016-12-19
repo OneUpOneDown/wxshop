@@ -1,0 +1,76 @@
+<ion-view title="售货机">
+    <ion-header-bar class="ly-bar" style="padding: 5px 20px;">
+        <input class="ly-search" type="text" placeholder="搜索售卖机名称">
+        <button id="ly-search-icon" class="ion-ios-search"></button>
+    <!-- 新增按钮-->
+    </ion-header-bar>
+    <ion-content>
+        <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+        <ion-list>
+            <ion-item style="background-color:#eee">附近</ion-item>
+            <ion-item>
+                <div class="row">
+                    <div class="col col-20 text-left">
+                        <img ng-src="../img/machine01.png" style="width:50px;height:50px;top:27px">
+                        <p><i>1.28</i>km</p>
+                    </div>
+                    <div class="col text-left">
+                        <h5>智能卖客-东荟城店</h5>
+                        <p class="ly-font12">广东省广州市萝岗区东荟二街25号</p>
+                        <div>
+                            <span><img src="../img/xigua-icon.png" alt=""></span>
+                            <span><img src="../img/cake-icon.png" alt=""></span>
+                            <span><img src="../img/bin-icon.png" alt=""></span>
+                            <span><img src="../img/food-icon.png" alt=""></span>
+                        </div>
+                    </div>
+                    <div class="col col-20 text-right">
+                        <p><i>4</i>件/单</p>
+                    </div>
+                </div>
+            </ion-item>
+            <ion-item>
+                <div class="row">
+                    <div class="col col-20 text-left">
+                        <img ng-src="../img/machine01.png" style="width:50px;height:50px;top:27px">
+                        <p><i>1.28</i>km</p>
+                    </div>
+                    <div class="col text-left">
+                        <h5>智能卖客-东荟城店</h5>
+                        <p class="ly-font12">广东省广州市萝岗区东荟二街25号</p>
+                        <div>
+                            <span><img src="../img/xigua-icon.png" alt=""></span>
+                            <span><img src="../img/cake-icon.png" alt=""></span>
+                            <span><img src="../img/bin-icon.png" alt=""></span>
+                            <span><img src="../img/food-icon.png" alt=""></span>
+                        </div>
+                    </div>
+                    <div class="col col-20 text-right">
+                        <p><i>4</i>件/单</p>
+                    </div>
+                </div>
+            </ion-item>
+            <ion-item>
+                <div class="row">
+                    <div class="col col-20 text-left">
+                        <img ng-src="../img/machine01.png" style="width:50px;height:50px;top:27px">
+                        <p><i>1.28</i>km</p>
+                    </div>
+                    <div class="col text-left">
+                        <h5>智能卖客-东荟城店</h5>
+                        <p class="ly-font12">广东省广州市萝岗区东荟二街25号</p>
+                        <div>
+                            <span><img src="../img/xigua-icon.png" alt=""></span>
+                            <span><img src="../img/cake-icon.png" alt=""></span>
+                            <span><img src="../img/bin-icon.png" alt=""></span>
+                            <span><img src="../img/food-icon.png" alt=""></span>
+                        </div>
+                    </div>
+                    <div class="col col-20 text-right">
+                        <p><i>4</i>件/单</p>
+                    </div>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

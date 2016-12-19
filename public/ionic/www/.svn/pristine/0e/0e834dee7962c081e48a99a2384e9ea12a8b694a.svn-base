@@ -1,0 +1,54 @@
+<ion-view view-title="分销中心">
+    <ion-content>
+        <ion-list>
+            <ion-item class="item-image">
+                <img src="../img/fenxiao02.png" alt="">
+            </ion-item>
+            <ion-item class="ly-paddingless">
+                <div class="row">
+                    <div class="col col-33 text-left">我的分销记录</div>
+                    <div class="col col-67 text-right ly-font12">共找到<i class="current-price">82</i>笔订单，分销总收入<i class="current-price">38.25</i></div>
+                </div>
+            </ion-item>
+            <ion-item class="ly-paddingless">
+                <div class="row">
+                    <div class="col col-75">
+                        <h3>二级订单(0.05): <i>2013062101000808</i></h3>
+                        <p class="ly-font12">购买者：<i>tim</i>上线：<i>qingnet</i></p>
+                        <p class="ly-font12">订单金额：<i>60</i>元&nbsp;分佣佣金：<i>10</i>元</p>
+                    </div>
+                    <div class="col col-25 text-center">
+                        <h2 class="current-price">+<i>3.00</i></h2>
+                        <p class="ly-font12">2016-06-22</p>
+                    </div>
+                </div>
+            </ion-item>
+            <ion-item class="ly-paddingless">
+                <div class="row">
+                    <div class="col col-75">
+                        <h3>二级订单(0.05): <i>2013062101000808</i></h3>
+                        <p class="ly-font12">购买者：<i>tim</i>上线：<i>qingnet</i></p>
+                        <p class="ly-font12">订单金额：<i>60</i>元&nbsp;分佣佣金：<i>10</i>元</p>
+                    </div>
+                    <div class="col col-25 text-center">
+                        <h2 class="current-price">+<i>3.00</i></h2>
+                        <p class="ly-font12">2016-06-22</p>
+                    </div>
+                </div>
+            </ion-item>
+            <ion-item class="ly-paddingless">
+                <div class="row">
+                    <div class="col col-75">
+                        <h3>二级订单(0.05): <i>2013062101000808</i></h3>
+                        <p class="ly-font12">购买者：<i>tim</i>上线：<i>qingnet</i></p>
+                        <p class="ly-font12">订单金额：<i>60</i>元&nbsp;分佣佣金：<i>10</i>元</p>
+                    </div>
+                    <div class="col col-25 text-center">
+                        <h2 class="current-price">+<i>3.00</i></h2>
+                        <p class="ly-font12">2016-06-22</p>
+                    </div>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

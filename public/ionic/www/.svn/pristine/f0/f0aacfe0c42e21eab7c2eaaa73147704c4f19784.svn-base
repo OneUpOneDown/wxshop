@@ -1,0 +1,301 @@
+angular.module('starter.controllers', ['angular-popups'])
+.controller('InTabCtrl',function($scope,$state){
+    $scope.intab=function(){
+        $state.go('tab.tab1');
+    }
+    $scope.inmachine=function(){
+        $state.go('machine');
+    }
+})
+.controller('MachineCtrl',function($scope){
+
+})
+
+.controller('TodoCtrl',function($scope,$http){
+    $scope.task={title:'广州市 萝岗区 万达影城...'};
+    //下拉刷新
+    $scope.doRefresh = function() {
+        $http.get('./data/refresh.json')   //注意改为自己本站的地址，不然会有跨域问题
+        .success(function(data) {
+            $scope.tasks = data;
+        })
+        .finally(function() {
+            $scope.$broadcast('scroll.refreshComplete');
+        });
+    };
+})
+.controller('tabController',function($scope){
+$scope.list=[{name:'热门推荐'},
+            {name:'休闲食品'},
+            {name:'甜品饮料'},
+            {name:'美食外卖'},
+            {name:'果蔬生鲜'},
+            {name:'进口食品'},
+            {name:'家具用品'},
+            {name:'婴儿用品'},
+            {name:'医药保健'},
+            {name:'甜品饮料'},
+            {name:'甜品饮料'},
+            {name:'甜品饮料'},]
+})
+.controller('mainTabController',function($scope,goodsServices,$state,$stateParams,$ionicSlideBoxDelegate){
+    $scope.inMap=function(){
+        $state.go('baidumap');
+    }
+    console.log('mainTabController',$ionicSlideBoxDelegate.update);
+    goodsServices.events()
+    .success(function(data) {
+        $scope.recommend = data;
+        console.log('recommend',$scope.recommend);
+        $ionicSlideBoxDelegate.update();
+    })
+
+})
+.controller('SalesCtrl',function($scope,$ionicPopover, goodsServices, $stateParams, $ionicSlideBoxDelegate){
+    // 弹窗
+    $ionicPopover.fromTemplateUrl("ez-popover.html", {
+        scope: $scope
+    })
+    .then(function(popover){
+        $scope.popover = popover;
+    })
+    $scope.openPopover = function($event) {
+        $scope.popover.show($event);
+    };
+    $scope.closePopover = function() {
+        $scope.popover.hide();
+    };
+    //销毁事件回调处理：清理popover对象
+    $scope.$on("$destroy", function() {
+        $scope.popover.remove();
+    });
+    // 隐藏事件回调处理
+    $scope.$on("popover.hidden", function() {
+        // Execute action
+    });
+    //删除事件回调处理
+    $scope.$on("popover.removed", function() {
+        // Execute action
+    });
+
+    goodsServices.events()
+    .success(function(data) {
+        $scope.recommend = data;
+        console.log('recommend',$scope.recommend);
+        $ionicSlideBoxDelegate.update();
+    })
+})
+.controller('MapCtrl',function($scope,machine){
+    $scope.machineSearch=function(){
+        console.log("machineSearch");
+        machine.machinelistall();
+    }
+    console.log("123");
+    // 百度地图API功能
+    var map = new BMap.Map("allmap");    // 创建Map实例
+    map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别
+    map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+    map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
+    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+})
+.controller('FoodCtrl',['$scope','goodsServices','$ionicPopup','$timeout','$stateParams', '$ionicSlideBoxDelegate','Popup',function($scope,goodsServices,$ionicPopup,$timeout, $stateParams, $ionicSlideBoxDelegate,Popup){
+    console.log("$stateParams",$stateParams);
+    $scope.showAlert = function() {
+        
+        Popup.notice('加入购物车成功', 3000, function () {
+            console.log('ok!');
+        });
+    };
+    var goodsItem=[];
+
+    goodsServices.events()
+    .success(function(data) {
+        $scope.recommend = data;
+        console.log('recommend',$scope.recommend);
+        $ionicSlideBoxDelegate.update();
+    })
+    
+}])
+.controller('DetailCtrl',function($scope,$ionicNavBarDelegate){
+
+})
+.controller('ShopingCart',function($scope,$ionicModal,$ionicPopup,Popup,$timeout,goodsServices,$state,$ionicSlideBoxDelegate){
+    $scope.backhome=function(){
+        $state.go('tab.tab1');
+    }
+    $scope.account=function(ly_total){
+        if(ly_total == 0){
+            Popup.notice('您还没有选择商品哦!',3000,function(){
+                console.log("slj");
+            })
+        }
+    }
+    goodsServices.events()
+    .success(function(data) {
+        $scope.recommend = data;
+        console.log('recommend',$scope.recommend);
+        $ionicSlideBoxDelegate.update();
+    })
+    $scope.items=[{id:0,title:'海尔冰箱',price:1,originalPrice:1995,goodsNum:1},
+                {id:1,title:'长虹电视',price:2,originalPrice:2995,goodsNum:2},
+                {id:2,title:'电饭锅',price:3,originalPrice:395,goodsNum:3},
+                {id:3,title:'长虹电视',price:2,originalPrice:2995,goodsNum:4},]
+    $scope.myCart=true;
+    //checkbox
+    var len = $scope.items.length;
+    $scope.choseArr=[];//定义数组用于存放前端显示
+    $scope.ly_total=0;
+    var str="";//
+    var flag='';//是否点击了全选，是为a
+    $scope.x=false;//默认未选中
+    var flagbull=[]; //选中与否
+    for (var j = 0; j < len; j++) {
+        flagbull.push(false);
+    }
+    console.log("flagbull",flagbull);
+    $scope.all= function (c,$index) {//全选
+        console.log("master",c)
+        if(c==true){
+            $scope.x=true;
+ 
+            $scope.varlist.total = 0;
+            for (var j = 0; j < len; j++) {
+                $scope.varlist.total = $scope.varlist.total + $scope.items[j].goodsNum * $scope.items[j].price;
+                flagbull[j]=true;
+            }
+            $scope.ly_total=$scope.varlist.total;
+        }else{
+            $scope.x=false;
+            $scope.choseArr=[""];
+            $scope.ly_total=$scope.varlist.total=0;
+             for (var j = 0; j < len; j++) {
+                flagbull[j]=false;
+            }
+        }
+        console.log('$scope.x',$scope.x);
+        flag='a';
+    };
+    $scope.chk= function ($index,x) {//单选或者多选
+        console.log("$scope.items[$index].price",$scope.items[$index].price);
+        if(flag=='a') {//在全选的基础上操作
+            str = $scope.choseArr.join(',') + ',';
+        }
+        if (x == true) {//选中
+            str = str + $index + ',';
+            getTotal($index);
+            flagbull[$index]=true;
+        } else {
+            str = str.replace($index + ',','');//取消选中
+            ReduceTotal($index);
+            flagbull[$index]=false;
+        }
+        $scope.choseArr=(str.substr(0,str.length-1)).split(',');
+        $scope.ly_total=$scope.varlist.total;
+    };
+    $scope.delete= function () {// 操作CURD
+        if($scope.choseArr[0]==""||$scope.choseArr.length==0){//没有选择一个的时候提示
+            alert("请至少选中一条数据在操作！")
+            return;
+        };
+
+        for(var i=0;i<$scope.choseArr.length;i++){
+            //alert($scope.choseArr[i]);
+            console.log($scope.choseArr[i]);//遍历选中的id
+        }
+    };
+    //checkbox
+    
+
+    $scope.remove=function($index){
+        console.log("$index",$index);
+        console.log('allremoveflagbull',flagbull)
+        console.log('removeflagbull',flagbull[$index]);
+        if(flagbull[$index] == true){
+            $scope.varlist.total = $scope.varlist.total - $scope.items[$index].goodsNum * $scope.items[$index].price;
+            $scope.ly_total=$scope.varlist.total;
+        }
+        $scope.items.splice($index,1);
+        console.log('$scope.itemss',$scope.items);
+        console.log('$scope.items',$scope.items.length);
+    }
+
+    // 检测是否变化，为了总价能够改变
+    // $scope.$watch("items.goodsNum", function() {
+    //     getTotal();
+    // }, true);
+    // 定义变量
+
+    $scope.varlist = {
+        total: 0
+    }
+    // 购物的时候操作
+    $scope.buy = function($index) {
+        $scope.items[$index].goodsNum++;
+        getTotal();
+    }
+    // -----
+    $scope.minus = function($index) {
+        if ($scope.items[$index].goodsNum == 0 || flagbull[$index] == false) {
+            return;
+        } else {
+            $scope.items[$index].goodsNum--;
+            $scope.varlist.total-= $scope.items[$index].price;
+            $scope.ly_total=$scope.varlist.total;
+        }
+    }
+    // ++++
+    $scope.add = function($index) {
+        if(flagbull[$index] == false){
+            return;
+        }else{
+        console.log('danqianbull',$scope.x)
+        $scope.items[$index].goodsNum++;
+        $scope.varlist.total+= $scope.items[$index].price;
+        $scope.ly_total=$scope.varlist.total;
+        }
+    }
+    // 计算总价
+    var getTotal = function($index) {
+        console.log('flag',flag);
+        console.log("hou$scope.items[$index].price;",$scope.items[$index].price);
+        console.log("hou$scope.items[$index].goodsNum;",$scope.items[$index].goodsNum);
+        $scope.varlist.total = $scope.varlist.total + $scope.items[$index].goodsNum * $scope.items[$index].price;
+        // for (var j = 0; j < len; j++) {
+        //     $scope.varlist.total = $scope.varlist.total + $scope.items.goodsNum[j] * $scope.items[j].price;
+        // }
+        return $scope.varlist.total;
+    }
+    var ReduceTotal = function($index) {
+        console.log('Reduceflag',flag);
+        console.log("Reducehou$scope.items[$index].price;",$scope.items[$index].price);
+        console.log("Reducehou$scope.items[$index].goodsNum;",$scope.items[$index].goodsNum);
+        $scope.varlist.total = $scope.varlist.total - $scope.items[$index].goodsNum * $scope.items[$index].price;
+        // for (var j = 0; j < len; j++) {
+        //     $scope.varlist.total = $scope.varlist.total + $scope.items.goodsNum[j] * $scope.items[j].price;
+        // }
+        return $scope.varlist.total;
+    }
+})
+.config(function (PopupProvider) {
+            PopupProvider.title = '客服电话';
+            PopupProvider.okValue = '确定';
+            PopupProvider.cancelValue = '取消';
+        })
+.controller('SetCtrl', function($scope,Popup) {
+    $scope.connect = function(){
+        Popup.confirm('4001-0000-000', function () {
+            
+        }, function () {
+            
+        });
+    }
+})
+// 订单完成详情
+.controller('OrderdetailCtrl',function($scope,goodsServices,$ionicSlideBoxDelegate){
+    goodsServices.events()
+    .success(function(data) {
+        $scope.recommend = data;
+        console.log('recommend',$scope.recommend);
+        $ionicSlideBoxDelegate.update();
+    })
+})

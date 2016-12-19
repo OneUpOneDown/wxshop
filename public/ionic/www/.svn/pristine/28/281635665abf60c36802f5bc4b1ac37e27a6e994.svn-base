@@ -1,0 +1,36 @@
+<ion-view view-title="设置">
+    <ion-content>
+        <ion-list>
+            <ion-item class="item-avatar">
+                <img src="../img/myface.png" alt="">
+                <h3 class="current-price">qingnet</h3>
+                <p class="current-price">会员</p>
+            </ion-item>
+            <ion-item class="item-icon-right" type="item-text-wrap" href="#/tab/set/mobile">
+                <h2>绑定手机号码</h2>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+            <ion-item class="item-icon-right" type="item-text-wrap" href="#/tab/set/password">
+                <h2>修改登录密码</h2>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+
+            <div style="height:20px;background-color:#eee"></div>
+            <ion-item class="item-icon-right" type="item-text-wrap" href="#/tab/set/message">
+                <h2>问题反馈</h2>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+            <ion-item class="item-icon-right" type="item-text-wrap" ng-click="connect()">
+                <h2>联系我们</h2>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+            <ion-item class="item-icon-right" type="item-text-wrap">
+                <h2>新版本检测</h2>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+            <ion-item class="text-center" style="border-bottom:none;">
+                <button class="button button-energized" style="width:100%;background-color:#ff7300">退出当前账号</button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

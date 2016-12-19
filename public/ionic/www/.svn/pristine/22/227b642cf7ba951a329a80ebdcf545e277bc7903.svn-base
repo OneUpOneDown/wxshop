@@ -1,0 +1,5 @@
+<ion-view view-title="待付款">
+    <ion-content style="top: 48px;">
+        待付款
+    </ion-content>
+</ion-view>

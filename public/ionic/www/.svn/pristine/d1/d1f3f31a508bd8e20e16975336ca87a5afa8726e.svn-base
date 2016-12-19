@@ -1,0 +1,82 @@
+<ion-view view-title="确认订单" hide-tabs="true">
+    <ion-content>
+        <ion-list>
+            <ion-item class="item-icon-right"
+            type="item-text-wrap">
+                <div class="row">
+                    <div class="col-30">
+                        <h2>收货地址</h2>
+                    </div>
+                    <div class="col-70 padding-left" style="overflow:hidden">
+                        <p>李青&nbsp;136****6695</p>
+                        <p>广东省 广州市 开发区 万达影城</p>
+                    </div>
+                </div>
+                <i class="icon ion-chevron-down icon-accessory"></i>
+            </ion-item>
+            <div style="height:20px;background-color:#eee"></div>
+            <ion-item class="item-divider light-bg">
+                <h2>订单明细</h2>
+            </ion-item>
+            <ion-item class="item-avatar-left">
+                <img src="../img/xigua.png" alt="">
+                <div class="row">
+                    <div class="col">
+                        <h3>栗子馅饼</h3>
+                        <p>编号：1022300012</p>
+                    </div>
+                    <div class="col text-right">
+                        <div class="current-price">¥<i class="ng-binding">18</i>元</div>
+                        <p>X<i>2</i></p>
+                    </div>
+                </div>
+            </ion-item>
+            <ion-item>
+                <div class="row" style="padding:0">
+                    <div class="col">
+                        <h3>配送方式：</h3>
+                    </div>
+                    <div class="col text-right">
+                        <h3>售卖机自取</h3>
+                    </div>
+                </div>
+            </ion-item>
+            <div style="height:20px;background-color:#eee"></div>
+            <ion-item class="item-icon-right">
+                <div class="row">
+                    <div class="col-50">优惠券</div>
+                    <div class="col-50 text-right">有钱任性不要券</div>
+                </div>
+                <i class="icon ion-chevron-down icon-accessory"></i>
+            </ion-item>
+            <ion-item class="item-icon-right">
+                <div class="row">
+                    <div class="col-50">支付方式</div>
+                    <div class="col-50 text-right">微信支付</div>
+                </div>
+                <i class="icon ion-chevron-down icon-accessory"></i>
+            </ion-item>
+            <ion-item class="item-icon-right">
+                <div class="row">
+                    <div class="col-50">应付总额</div>
+                    <div class="col-50 text-right">
+                        <div>
+                        <span class="current-price">¥<i class="ng-binding">18</i></span>(运费:¥<i>0</i>)
+                        </div>
+                    </div>
+                </div>
+                <i class="icon ion-chevron-down icon-accessory"></i>
+            </ion-item>
+            <ion-item class="item-checkbox item-borderless stable-bg">
+                <label class="checkbox">
+                    <input type="checkbox">
+                </label>
+                本人接受《智能售卖服务协议》
+            </ion-item>
+
+            <button class="button button-block ly-bg light">确认支付</button>
+
+        </ion-list>
+
+    </ion-content>
+</ion-view>

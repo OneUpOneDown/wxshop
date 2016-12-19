@@ -1,0 +1,114 @@
+<ion-view view-title="shopping-cart">
+    <ion-content style="bottom:100px;">
+        <ion-list ng-if="!myCart">
+            <ion-item class="text-center">
+                <button style="font-size: 125px;color: #d5d5d5;" class="ly-button ion-ios-cart-outline"></button>
+                <h2 style="color: #d5d5d5; margin-bottom: 20px;">您的购物车还没有商品哦</h2>
+                <a ng-click="backhome();" class="ly-submit-button">去挑选</a>
+            </ion-item>
+
+            <div class="item">
+                <h3 style="padding-left: 7px;border-left: 3px solid #ff7300;">买了又买</h3>
+            </div>
+
+            <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
+              <ion-slide ng-repeat="item in recommend">
+                    <div style="width:33%;display:inline-block;padding:10px;" ng-repeat="goods in item.items">
+                        <a href="#/tab/food/{{goods.id}}"><img ng-src="{{goods.imgurl}}" alt="" style="width:100%;height:auto;border:1px solid #eee"></a>
+                        <div>
+                            <div>{{goods.method}}</div>
+                            <div>已售<i class="number-case">{{goods.salesNumber}}</i>件</div>
+                        </div>
+                        <div>
+                            <span class="current-price">¥<i>{{goods.currentPrice}}</i>元</span>
+                            <span><del class="old original-price">¥<span>{{goods.originalPrice}}</span></del></span>
+                        </div>
+                    </div>
+              </ion-slide>
+            </ion-slide-box>
+        </ion-list>
+        <ion-list ng-if="myCart">
+            <ion-item style="padding:16px 0;" ng-repeat='item in items'>
+                <div class="row">
+                    <div class="col col-10 col-center">
+                        <label class="checkbox"><input id={{item.id}} ng-model="x" ng-checked="master" type="checkbox" ng-click="chk(item.id,x)"></label>
+                    </div>
+                    <div class="col col-20">
+                        <img src="img/food2.png" alt="" style="width:50px;height:50px;">
+                    </div>
+                    <div class="col col-40">
+                        <p>{{item.title}}</p>
+                        <div class="current-price">
+                        ¥<i>{{item.price}}</i>元
+                        <div><del class="old original-price">¥<span>{{item.originalPrice}}</div></del>
+                        </div>
+                    </div>
+                    <div class="col">
+                            <div ng-click="remove($index)" class="text-center" style="padding: inherit;color: #fff; width: 100%;margin-bottom: 10px;background-color: #ff7300;">删除</div>
+                            <div>
+                                <span class="text-center" style="display:inline-block;padding:inherit;width:33%;border:1px solid #eee;background: none;" ng-click = "minus($index)">-</span><span class="text-center" style="display:inline-block;padding:inherit;width:33%;border:1px solid #eee;border-left:none;background: none;">x <span ng-model = "item.goodsNum">{{item.goodsNum}}</span></span><span ng-click = "add($index)" class="text-center" style="display:inline-block;padding:inherit;width:33%;border:1px solid #eee;border-left:none;background: none;">+</span>
+                            </div>
+                    </div>
+                </div>
+            </ion-item>
+            <!-- <section>
+                <pre>{{choseArr}}</pre>
+                全选: <input type="checkbox" ng-model="master" ng-click="all(master,tesarry)">
+                <div ng-repeat="z in tesarry">
+                    <input id={{z}} type="checkbox"  ng-model="x" ng-checked="master" ng-click="chk(z,x)">{{z}}
+                </div>
+                <a href="#" class="btn btn-danger" ng-click="delete()" > 删除</a>
+            </section> -->
+        </ion-list>
+
+    </ion-content>
+    <div  ng-show="myCart" style="position: absolute; margin-bottom: 49px; width: 100%; display: flex; bottom: 0; border-top: 1px solid #ddd;">
+        <div class="col col-25 col-center">
+            <label class="checkbox"><input ng-model="master" type="checkbox" ng-click="all(master)"></label>
+            <span style="position: relative;
+            bottom: 10px;">全选</span>
+        </div>
+        <div class="col col-50 text-right">
+            <div>合计：
+                <span class="current-price">
+                ¥<span>{{ly_total|number:2}}</span>
+                </span>
+            </div>
+            <div><i class="ly-gray-color" style="font-size:12px;">(满68包邮)</i>运费&nbsp;<span class="current-price">¥10</span></div>
+        </div>
+        <div class="col col-25 col-center text-right" style="padding: 0"> 
+            <a ng-click="account(ly_total)" style="background: #ff7300;color: #fff;padding:16px;">
+            结算(<span>5</span>)
+            </a>
+        </div>
+    </div>
+</ion-view>
+<script id="my-modal.html" type="text/ng-template" >
+     <ion-modal-view>
+        <ion-header-bar class="bar bar-header" style="border-top:5px solid rgba(0,0,0,0.2)">
+          <button style="font-size: 20px;padding: 0px 16px;" class="ly-button ion-ios-arrow-left" ng-click="modal.hide()"></button>
+        </ion-header-bar>
+        <ion-content>
+          <div class="list">
+            <div class="item item-icon-right ">
+                <h3>收获地址</h3>
+                 <i class="icon ion-ios-arrow-down icon-accessory"></i>
+            </div>
+            <div class="item item-icon-right ">
+                <h3>收获地址</h3>
+                 <i class="icon ion-ios-arrow-down icon-accessory"></i>
+            </div>
+            <div class="item item-icon-right ">
+                <h3>收获地址</h3>
+                 <i class="icon ion-ios-arrow-down icon-accessory"></i>
+            </div>
+            <div class="item item-icon-right ">
+                <h3>收获地址</h3>
+                 <i class="icon ion-ios-arrow-down icon-accessory"></i>
+            </div>
+            <p style="padding: 3px 0 0 15px; font-size: 12px; color: #777;">本人接受《智能售卖服务协议》</p>
+            <button style="width:100%;" class="ly-submit-button" ng-click="createContact(newUser)">确认支付</button>
+          </div>
+        </ion-content>
+      </ion-modal-view>
+</script>

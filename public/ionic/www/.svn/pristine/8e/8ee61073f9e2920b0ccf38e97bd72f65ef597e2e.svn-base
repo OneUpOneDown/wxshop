@@ -1,0 +1,120 @@
+<!-- <ion-view view-title="food" hide-tabs="true">
+    <ion-header-bar align-title="left" class="bar-dark">
+        <div class="buttons">
+            <a class="button" ng-click="doSomething()"  href="#/tab/tab1">
+                <button class="ly-back-icon ly-button ion-android-arrow-back"></button>
+            </a>
+        </div>
+        <h1 class="title">我的地址</h1>
+        <div class="buttons">
+            <button class="ly-add-icon ly-button ion-android-add"></button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <ion-list>
+            <ion-item class="item-remove-animate item-avatar item-icon-right"
+            type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+                <h2>小明,13312344321</h2>
+                <p>广东省 广州市 开发区 万达影城</p>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+                <ion-option-button class="button-assertive" ng-click="remove(chat)">
+                  删除
+                </ion-option-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
+ -->
+<ion-view view-title="food" hide-tabs="true">
+    <ion-header-bar align-title="center" class="bar-dark">
+        <div class="buttons">
+            <a class="button" ng-click="doSomething()"  href="#/tab/tab1">
+                <button class="ly-back-icon ly-button ion-android-arrow-back"></button>
+            </a>
+        </div>
+        <h1 class="title">商品详情</h1>
+        <div class="buttons">
+            <button class="ly-button"></button>
+        </div>
+    </ion-header-bar>
+    <ion-content style="padding-top:0;">
+    <ion-list>
+        <!-- 轮播图 -->
+        <ion-slide-box on-slide-changed="slideHasChanged($index)" auto-play="true" does-continue="true" slide-interval=2000 show-pager="true" pager-click="pageClick(index)" active-slide="model.activeIndex" delegate-handle="delegateHandler">
+            <ion-slide>
+                <div class="box blue"><img src="img/banner-01.jpg"></div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box yellow"><img src="img/banner-02.jpg"></div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box pink"><img src="img/banner-03.jpg"></div>
+            </ion-slide>
+        </ion-slide-box>
+    </ion-list>
+    <ion-list>
+        <div class="row">
+            <div class="col col-70 col-center" ng-bind="goods.name">嘉士利果乐果香夹心饼干多口味套餐组合零食680克</div>
+            <div class="col col-10"></div>
+            <div class="col col-20 text-center col-center" style="border-left:1px solid #ddd;">
+                <a href="##" style="display:block;">
+                    <button class="ly-button ion-ios-heart-outline"></button>
+                    <p>收藏</p>
+                </a>
+            </div>
+        </div>
+        <div style="padding:0 10px;">
+            <span class="current-price">¥<i class="ng-binding">18</i>元</span>
+            <span><del class="old original-price">¥<span class="ng-binding">48</span></del></span>
+        </div>
+        <div class="row">
+            <div class="col col-70 ly-gray-color">商城发货 满88包邮(10kg内)</div>
+            <div class="col col-30 text-right ly-gray-color">月销1866笔</div>
+        </div>
+    </ion-list>
+
+    <div style="height:20px;background-color:#eee"></div>
+
+    <a href="##">
+        <ion-item class="item-icon-right item" type="item-text-wrap">
+            <h2>优惠券</h2>
+            <i class="icon ion-chevron-right icon-accessory"></i>
+        </ion-item>
+    </a>
+    
+    <div style="height:20px;background-color:#eee"></div>
+
+    <a href="##">
+        <ion-item class="item-icon-right item" type="item-text-wrap">
+            <h2>小伙伴们说(820)</h2>
+            <i class="icon ion-chevron-right icon-accessory"></i>
+        </ion-item>
+    </a>
+
+    <div class="list" style="margin-bottom:0;">
+        <div class="item">
+            <h3 style="padding-left: 7px; border-left: 3px solid #ff7300;">为您推荐</h3>
+        </div>
+
+        <ion-slide-box auto-play="true" does-continue="true" slide-interval=2000 show-pager="false" on-slide-changed="slideHasChanged($index)">
+            <ion-slide ng-repeat="item in recommend">
+                <div style="width:33%;display:inline-block;padding:10px;" ng-repeat="goods in item.items">
+                    <a href="##"><img src="{{goods.imgurl}}" alt="" style="width:100%;height:auto;border:1px solid #eee"></a>
+                    <div>
+                        <div>{{goods.method}}</div>
+                        <div>已售<i class="number-case">{{goods.salesNumber}}</i>件</div>
+                    </div>
+                        <div>
+                        <span class="current-price">¥<i>{{goods.currentPrice}}</i>元</span>
+                        <span><del class="old original-price">¥<span>{{goods.originalPrice}}</span></del></span>
+                    </div>
+                </div>
+            </ion-slide>
+        </ion-slide-box>
+    </div>
+    </ion-content>
+    <div style="position: absolute; width: 100%; display: flex; bottom: 0; border-top: 1px solid #ddd;">
+            <a class="col col col-center ly-white text-center ly-button-block" style="background:#E42112" href="#/tab/order">立即购买</a>
+            <a ng-click="showAlert()" class="col col col-center text-center ly-button-block ly-white">加入购物车</a>
+    </div>
+</ion-view>

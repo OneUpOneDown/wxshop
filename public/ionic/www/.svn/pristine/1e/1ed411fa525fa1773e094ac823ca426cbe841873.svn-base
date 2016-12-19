@@ -1,0 +1,5 @@
+<ion-view view-title="待发货">
+    <ion-content style="top: 48px;">
+        待发货
+    </ion-content>
+</ion-view>

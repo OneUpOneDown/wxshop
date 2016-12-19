@@ -1,0 +1,31 @@
+<ion-view view-title="订单">
+    <ion-header-bar class="item-input-inset item-icon-left" style="background-color:#f8f8f8;">
+       <!--  <button menu-toggle="left" class="ion-navicon"></button>
+        <input type="text" placeholder="搜索商品/售货机">
+        <button class="ion-ios-search"></button> -->
+        <a class="button button-clear icon-right ion-ios-arrow-left" style="padding-right:10px;" href="#/tab/personal-center"></a>
+        <label class="item-input-wrapper light-bg">
+            
+            <input type="text" placeholder="输入您要搜索的内容">
+            <a class="button button-clear icon-right ion-ios-search"></a>
+        </label>
+    </ion-header-bar>
+    <ion-tabs class="tabs-top tabs-color-active-positive tabs-striped ly-eee-bg">
+        <!-- Dashboard Tab -->
+        <ion-tab title="全部订单"  href="#/orders/orderall">
+            <ion-nav-view name="new-orderall"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="待付款"  href="#/orders/paying">
+            <ion-nav-view name="new-paying"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="待发货"  href="#/orders/deliver">
+            <ion-nav-view name="new-deliver"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="待取货" href="#/orders/receiving">
+            <ion-nav-view name="new-receiving"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="待评价" href="#/orders/evaluate">
+            <ion-nav-view name="new-evaluate"></ion-nav-view>
+        </ion-tab> 
+    </ion-tabs>
+</ion-view>

@@ -1,0 +1,13 @@
+.footer{
+	padding-left: 15px;
+}
+.success-msg{
+	background-color:#d9edf7;
+	color:#333; 
+	padding:8px;
+}
+.err-msg{
+	background-color: red;
+	color: #fff;
+	padding: 8px;
+}

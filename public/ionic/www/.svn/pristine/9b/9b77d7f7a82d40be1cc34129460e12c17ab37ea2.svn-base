@@ -1,0 +1,36 @@
+<ion-view class="ly-eee-bg" view-title="问题反馈" hide-tabs="true">
+    <ion-content >
+        <ion-list >
+            <div style="    position: relative;    padding: 10px 60px 10px 10px;">
+                <span style="position: absolute;
+    left: 16px;
+    top: 17px;">标题：</span>
+                <input type="text" style="    border: 1px solid #ddd;
+    width: 100%;
+    padding-left: 50px;">
+                <span style="    position: absolute;
+    right: 8px;
+    top: 11px;
+    padding: 0 11px;       border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 3px;">
+                    <i class="icon ion-ios-email-outline" style="font-size: 27px;"></i>
+                </span>
+            </div>
+            <div style="    padding: 10px;
+    position: relative;">
+                <span style="position: absolute;
+    left: 16px;
+    top: 17px;">内容：</span>
+                <textarea name="" id="" style="width: 100%;
+    min-height: 200px;
+    border: 1px solid #ddd;
+    padding-left: 50px;
+    padding-top: 10px;"></textarea>
+            </div>
+
+                <a href="##" class="button button-full light" style="background-color:#ddd;margin:0 10px">提交</a>
+   
+        </ion-list>
+    </ion-content>
+</ion-view>

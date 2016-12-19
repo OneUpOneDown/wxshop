@@ -1,0 +1,101 @@
+<ion-view view-title="个人中心">
+    <ion-content style="padding-top:0;">
+        <ion-list>
+            <img src="img/mybackgd.png" alt="">
+            <div style="width:50px;height:50px;background:#fff;border-radius:50%;position:absolute;top:10%;left:42%;overflow:hidden;">
+                <img src="img/myface.png" >
+            </div>
+            <div style="position: absolute; left: 40%; top: 40%; color: #fff;">
+                张三&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                <button class="ly-button ion-ios-arrow-right" style="color:#fff;"></button>
+            </div>
+            <div class="row" style="position: absolute; bottom: 0; background-color: rgba(254,194,105,15); color:#fff;">
+                <a class="col text-center"  href="##">
+                    <div style="color:#ff7300">83</div>
+                    <div style="color:#fff">我的智能豆</div>
+                </a>
+                <a class="col text-center" href="##">
+                    <div style="color:#ff7300">83</div>
+                    <div style="color:#fff">收藏的商品</div>
+                </a>
+                <a  class="col text-center" href="##">
+                    <div style="color:#ff7300">83</div>
+                    <div style="color:#fff">关注的售货机</div>
+                </a>
+            </div>
+        </ion-list>
+        <ion-list>
+            <div class="item row">
+                <div class="col text-left">我的订单</div>
+                <a href="#/orders/orderall" class="col text-right" style="font-size: 12px; color: #999;">查看所有订单 ></a>
+            </div>
+            <div class="item row" style="padding-top:5px;">
+                <a class="col text-center" href="#/orders/paying">
+                    <img src="../img/daizhifu.png" alt="" width="21" height="18"> 
+                    <div class="ly-gray-color ly-font12">待支付</div>
+                </a>
+                <a class="col text-center" href="#/orders/deliver">
+                    <img src="../img/daifahuo.png" alt="" width="21" height="18"> 
+                    <div class="ly-gray-color ly-font12">待发货</div>
+                </a>
+                <a class="col text-center" href="#/orders/receiving">
+                    <img src="../img/daiquhuo.png" alt="" width="21" height="18"> 
+                    <div class="ly-gray-color ly-font12">待取货</div>
+                </a>
+                <a class="col text-center" href="#/orders/evaluate">
+                    <img src="../img/daipingjia.png" alt="" width="21" height="18"> 
+                    <div class="ly-gray-color ly-font12">待评价</div>
+                </a>
+            </div>
+        </ion-list>
+        <div style="height:20px;background-color:#eee"></div>
+        <ion-list>
+            <div class="item row">
+                <div class="col text-left">必备工具</div>
+                <a class="col text-right" style="font-size: 12px; color: #999;">更多 ></a>
+            </div>
+            <div >
+                <a class="ly-item ly-block" href="#/tab/personal-center/money">
+                    <img src="../img/lingqian.png" alt="" style="width:40px;height:40px">
+                    <div>零钱</div>
+                </a>
+                <a class="ly-item ly-block">
+                    <img src="../img/lipingduihuan.png" alt="" style="width:40px;height:40px">
+                    <div>礼品兑换</div>
+                </a>
+                <a class="ly-item ly-block" href="#/tixianrecord/all">
+                    <img src="../img/tixianshenqing.png" alt="" style="width:40px;height:40px">
+                    <div>提现申请</div>
+                </a>
+                <a class="ly-item ly-block">
+                    <img src="../img/zuji.png" alt="" style="width:40px;height:40px">
+                    <div>足迹</div>
+                </a>
+                <a class="ly-item ly-block">
+                    <img src="../img/haoyou.png" alt="" style="width:40px;height:40px">
+                    <div>好友</div>
+                </a>
+                <a class="ly-item ly-block">
+                    <img src="../img/yaoqinghaoyou.png" alt="" style="width:40px;height:40px">
+                    <div>邀请好友</div>
+                </a>
+                <a class="ly-item ly-block">
+                    <img src="../img/fenxiangzhuanqian.png" alt="" style="width:40px;height:40px">
+                    <div>分享赚钱</div>
+                </a>
+                <a class="ly-item ly-block">
+                    <img src="../img/huiyuanzhongxin.png" alt="" style="width:40px;height:40px">
+                    <div>会员中心</div>
+                </a>
+                <a class="ly-item ly-block" href="#/tab/personal-center/fenxiao">
+                    <img src="../img/huiyuanzhongxin.png" alt="" style="width:40px;height:40px">
+                    <div>分销</div>
+                </a>
+                <a class="ly-item ly-block" href="#/tab/personal-center/fenxiaozx">
+                    <img src="../img/huiyuanzhongxin.png" alt="" style="width:40px;height:40px">
+                    <div>分销中心</div>
+                </a>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>

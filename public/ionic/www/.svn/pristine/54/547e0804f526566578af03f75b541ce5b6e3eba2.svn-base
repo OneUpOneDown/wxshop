@@ -1,0 +1,21 @@
+<ion-view view-title="找回密码" hide-tabs="true">
+<ion-content class="stable-bg">
+    <ion-list class="list-inset">
+        <ion-item class="item-borderless stable-bg">
+            <span class="input-label padding-bottom">请填写历史购买的商品名称</span>
+            <input style="border: 1px solid #ddd;width: 100%;" type="text" placeholder="历史已完成订单的商品">
+        </ion-item>
+        <ion-item class="item-borderless stable-bg">
+            <span class="input-label padding-bottom">请设置新的登陆密码</span>
+            <input style="border: 1px solid #ddd;width: 100%;" type="password" placeholder="6-20位，不能与旧密码相同">
+            
+        </ion-item>
+        <p class="padding">备注：请将密码设置为6-20位，并且由字母、数字和符号两种以上的组合，不能与旧密码相同</p>
+        <ion-item class="item-borderless stable-bg padding-top text-center" style="border-bottom:none;">
+            <button class="button button-block" style="background-color:#848689">完成</button>
+        </ion-item>
+       
+
+    </ion-list>
+</ion-content>
+</ion-view>
