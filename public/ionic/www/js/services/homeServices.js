@@ -36,11 +36,6 @@ define([],function () {
                             data1.push(str);
                         }
                     });
-                    // data.forEach( function(item) {
-                    //     var str = item.imgUrl
-                    //             str = str + '{ "name" : "' + user.username + '"},' +'\n';
-                    //         });
-                   
                     console.log("databanner",data1);
                     deferred.resolve(data1);
                 }).error(function (error){

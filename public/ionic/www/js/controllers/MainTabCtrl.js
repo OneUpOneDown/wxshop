@@ -44,12 +44,14 @@ define(['app'],function (app){
         // $ionicLoading.show({
         //         template: "正在载入数据，请稍后..."
         //     });
+        $scope.banner = [{imgUrl:"banner-01.jpg"},{imgUrl:"banner-02.jpg"},{imgUrl:"banner-03.jpg"},];
+        $ionicSlideBoxDelegate.update();
         $timeout(function(){
         homeServices.getbanner().then(function (data){
             // console.log(data.banner);
             // $scope.banner = [{ "imgUrl" : "banner-01.jpg"},{ "imgUrl" : "banner-02.jpg"},{ "imgUrl" : "banner-03.jpg"}];
-            $scope.banner = data;
-            $ionicSlideBoxDelegate.update();
+            // $scope.banner = data;
+            // $ionicSlideBoxDelegate.update();
             $ionicLoading.hide();
         },function (error){
             $ionicLoading.hide();
