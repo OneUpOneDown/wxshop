@@ -31,6 +31,8 @@ app.directive('hideTabs', function($rootScope) {
     };
 })
 .config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider,$controllerProvider) {
+// 按需加载html
+$ionicConfigProvider.templates.maxPrefetch(0);
 //android手机上Tab在顶部问题
 $ionicConfigProvider.platform.ios.tabs.style('standard'); 
 $ionicConfigProvider.platform.ios.tabs.position('bottom');
